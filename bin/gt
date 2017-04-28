@@ -23,6 +23,7 @@ program.client = new Twitter({
 require('../lib/logger')(program);
 require('../lib/output')(program);
 require('../lib/friends')(program);
+require('../lib/followers')(program);
 
 
 program.parse(process.argv);
