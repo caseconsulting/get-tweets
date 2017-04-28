@@ -1,7 +1,6 @@
 # get-tweets
 
 1. [Caution](#caution)
-1. [Prerequisites](#prerequisites)
 1. [Installation](#installation)
 1. [Running](#running)
 
@@ -25,4 +24,10 @@ Create an .env file. See the [sample](env.example) for more information.
 
 ```sh
 ./bin/gt --help
+```
+
+A good example is:
+
+```sh
+./bin/gt -d -o foobar.txt friends nodejs
 ```
