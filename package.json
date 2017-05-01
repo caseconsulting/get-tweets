@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CLI to retrieve tweets",
   "scripts": {
-    "run": "bin/gt"
+    "gt": "bin/gt"
   },
   "author": "tech@consultwithcase.com",
   "license": "MIT",

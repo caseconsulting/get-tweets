@@ -26,8 +26,14 @@ Create an .env file. See the [sample](env.example) for more information.
 ./bin/gt --help
 ```
 
+or 
+
+```sh
+yarn gt -- -d -o output.json friends consultwithcase
+```
+
 A good example is:
 
 ```sh
-./bin/gt -d -o foobar.txt friends nodejs
+./bin/gt -d -o output.json friends nodejs
 ```
