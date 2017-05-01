@@ -3,6 +3,7 @@
 1. [Caution](#caution)
 1. [Installation](#installation)
 1. [Running](#running)
+1. [Todo](#todo)
 
 ## Caution
 
@@ -37,3 +38,9 @@ A good example is:
 ```sh
 ./bin/gt -d -o output.json friends nodejs
 ```
+
+## Todo
+
+1. add a formatting flag
+1. add more commands
+1. add tests
