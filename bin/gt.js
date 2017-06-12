@@ -24,7 +24,7 @@ require('../lib/logger')(program);
 require('../lib/output')(program);
 require('../lib/friends')(program);
 require('../lib/followers')(program);
-require('../lib/tweets')(program);
+
 
 program.parse(process.argv);
 
@@ -33,3 +33,5 @@ if (program.args.length < 1) {
   program.outputHelp();
   process.exit(1);
 }
+
+module.exports
