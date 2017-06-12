@@ -16,7 +16,7 @@ program.client = new Twitter({
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET,
   access_token_key: process.env.ACCESS_TOKEN_KEY,
-  access_token_secret: process.env.ACCESS_TOKEN_SECRET 
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
 
 // Plugins
@@ -24,7 +24,7 @@ require('../lib/logger')(program);
 require('../lib/output')(program);
 require('../lib/friends')(program);
 require('../lib/followers')(program);
-
+require('../lib/tweets')(program);
 
 program.parse(process.argv);
 
