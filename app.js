@@ -1,9 +1,13 @@
 var express = require('express');
 var app = express();
 <<<<<<< HEAD
+<<<<<<< HEAD
 const tweet = require('./lib/tweets');
 =======
 >>>>>>> express-basics: added basic express functionality
+=======
+const tweet = require('./lib/tweets');
+>>>>>>> adding-tweet-json: moved tweet getting into app.js for now to test
 
 //serves everything in the public folder. ie. index.html and client.js
 app.use(express.static('public'));
@@ -11,6 +15,7 @@ app.use(express.static('public'));
 //route for tweets called by tweets function
 app.get('/tweets', function (req, res, body) {
   //send json file
+<<<<<<< HEAD
 <<<<<<< HEAD
   'use strict';
   let username = req.query.handle;
@@ -26,6 +31,14 @@ app.get('/tweets', function (req, res, body) {
     exclude_replies: true,
     include_rts: false
   };
+=======
+  'use strict';
+
+  var Twitter = require('twitter');
+  require('dotenv').config();
+
+  var params = {screen_name: "boisseaujacob",exclude_replies:true,include_rts:false};
+>>>>>>> adding-tweet-json: moved tweet getting into app.js for now to test
 
   var client = new Twitter({
     consumer_key: process.env.CONSUMER_KEY,
@@ -35,6 +48,7 @@ app.get('/tweets', function (req, res, body) {
   });
 
 
+<<<<<<< HEAD
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
       res.json(tweets);
@@ -45,6 +59,14 @@ app.get('/tweets', function (req, res, body) {
   body = "hello skywalker";
   res.send(body);
 >>>>>>> express-basics: added basic express functionality
+=======
+    client.get('statuses/user_timeline', params, function(error, tweets, response) {
+      if (!error) {
+        res.send(JSON.stringify(tweets, undefined, 4));
+      }
+    });
+
+>>>>>>> adding-tweet-json: moved tweet getting into app.js for now to test
 });
 
 //initialize the server on port 3000

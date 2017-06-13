@@ -46,7 +46,7 @@ $( "#tweets" ).click(function() {
 =======
   $.get('/tweets', function(req,res, body){
     //write to the doc
-  document.write(body);
+    document.write(req);
   });
 
 });
