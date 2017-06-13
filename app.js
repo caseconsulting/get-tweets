@@ -9,12 +9,16 @@ app.use(express.static('public'));
 app.get('/tweets', function (req, res, body) {
   //send json file
   'use strict';
-  
+  console.log(req.query.handle);
 
   var Twitter = require('twitter');
   require('dotenv').config();
 
-  var params = {screen_name: "boisseaujacob",exclude_replies:true,include_rts:false};
+  var params = {
+    screen_name: req.query.handle,
+    exclude_replies: true,
+    include_rts: false
+  };
 
   var client = new Twitter({
     consumer_key: process.env.CONSUMER_KEY,
@@ -24,11 +28,11 @@ app.get('/tweets', function (req, res, body) {
   });
 
 
-    client.get('statuses/user_timeline', params, function(error, tweets, response) {
-      if (!error) {
-        res.json(tweets);
-      }
-    });
+  client.get('statuses/user_timeline', params, function(error, tweets, response) {
+    if (!error) {
+      res.json(tweets);
+    }
+  });
 
 });
 
