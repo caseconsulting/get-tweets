@@ -12,6 +12,7 @@ $( "#tweets" ).click(function() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   var input = document.getElementById("input").value;
 
@@ -68,6 +69,8 @@ $( "#tweets" ).click(function() {
 });
 >>>>>>> express-basics: added basic express functionality
 =======
+=======
+>>>>>>> ba6eb8b735fac0fb88b21a61d00afbe1e9118e3d
 
   var input = document.getElementById("input").value;
 
@@ -81,4 +84,7 @@ $( "#tweets" ).click(function() {
       }
     });
   });
+<<<<<<< HEAD
 >>>>>>> express-basics: parameterized routes to enable handle-specific tweet requests
+=======
+>>>>>>> ba6eb8b735fac0fb88b21a61d00afbe1e9118e3d
