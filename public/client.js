@@ -14,8 +14,11 @@ $( "#tweets" ).click(function() {
   body = input;
   $.get('/tweets', function(req,res, body){
     //write to the doc
+    for (let key in req)
+    {
+      $('#tweetCallback').append('<p>' + req[key].text + '<p>');
+    }
 
-    //document.write(req);
   });
 
 });
