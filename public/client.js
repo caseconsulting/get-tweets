@@ -12,7 +12,7 @@ $( "#tweets" ).click(function() {
 
   var input = document.getElementById("input").value;
 
-  console.log(input);
+  console.log("Username sent: "+input);
 
   $.get('/tweets', {handle: input + ''}, function(req, res, body){
       for (let key in req)
