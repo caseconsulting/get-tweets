@@ -32,7 +32,8 @@ $( "#tweets" ).click(function() {
   $.get('/tweets', {handle: input + ''}, function(req, res, body){
       for (let key in req)
       {
-        $('#tweetCallback').append('<p>' + req[key].text + '<p>');
+        $('#tweetCallback').append('<h6>' + req[key].text + '<h6>');
+
       }
     });
 >>>>>>> express-basics: parameterized routes to enable handle-specific tweet requests
