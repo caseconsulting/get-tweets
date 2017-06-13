@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> express-basics: added basic express functionality
 Notes
@@ -9,6 +10,8 @@ https://twitter.com/intent/user?user_id=xxxxxxxxx
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> adding-tweet-json: added notes
 
 
 
@@ -17,6 +20,9 @@ https://twitter.com/intent/user?user_id=xxxxxxxxx
 
 
 call gt using '--' to get an output file
+<<<<<<< HEAD
 >>>>>>> adding-tweet-json: added notes
 =======
 >>>>>>> express-basics: added basic express functionality
+=======
+>>>>>>> adding-tweet-json: added notes
