@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Get Tweets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  </head>
+  <body>
+    <h1>Get Tweets</h1>
+
+    <div>
+      <button id="friends">Friends</button>
+      <button id="followers">Followers</button>
+      <button id="tweets">Tweets</button>
+    </div>
+
+    <div>
+      <form>
+        @<input id="input" type="text" name="twitter handle" placeholder="twitter handle"/>
+      </form>
+    </div>
+
+    <div class="output">
+      <ul class="tweets friends followers">
+      </ul>
+    </div>
+
+    <script src="jquery.min.js"></script>
+  <script src="client.js"></script>
+  </body>
+</html>
