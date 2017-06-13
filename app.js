@@ -9,6 +9,7 @@ app.use(express.static('public'));
 app.get('/tweets', function (req, res, body) {
   //send json file
   'use strict';
+  
 
   var Twitter = require('twitter');
   require('dotenv').config();
