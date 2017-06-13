@@ -12,6 +12,7 @@ $( "#tweets" ).click(function() {
 
   var input = document.getElementById("input").value;
 
+<<<<<<< HEAD
   console.log(input);
 <<<<<<< HEAD
   body = input;
@@ -28,6 +29,9 @@ $( "#tweets" ).click(function() {
 
 >>>>>>> express-basics: added json output to page through client-side jquery
 =======
+=======
+  console.log("Username sent: "+input);
+>>>>>>> adding-tweet-json: user can enter @ sign in input
 
   $.get('/tweets', {handle: input + ''}, function(req, res, body){
       for (let key in req)

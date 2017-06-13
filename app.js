@@ -9,13 +9,16 @@ app.use(express.static('public'));
 app.get('/tweets', function (req, res, body) {
   //send json file
   'use strict';
-  console.log(req.query.handle);
-
+  let username = req.query.handle;
   var Twitter = require('twitter');
   require('dotenv').config();
 
+  if(username[0]=='@'){
+  username = username.replace('@','');
+  }
+  console.log("Username recived: "+username);
   var params = {
-    screen_name: req.query.handle,
+    screen_name: username,
     exclude_replies: true,
     include_rts: false
   };
