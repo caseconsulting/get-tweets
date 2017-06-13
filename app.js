@@ -33,13 +33,21 @@ app.get('/tweets', function (req, res, body) {
   };
 =======
   'use strict';
-  
+  console.log(req.query.handle);
 
   var Twitter = require('twitter');
   require('dotenv').config();
 
+<<<<<<< HEAD
   var params = {screen_name: "boisseaujacob",exclude_replies:true,include_rts:false};
 >>>>>>> adding-tweet-json: moved tweet getting into app.js for now to test
+=======
+  var params = {
+    screen_name: req.query.handle,
+    exclude_replies: true,
+    include_rts: false
+  };
+>>>>>>> express-basics: parameterized routes to enable handle-specific tweet requests
 
   var client = new Twitter({
     consumer_key: process.env.CONSUMER_KEY,
@@ -50,11 +58,15 @@ app.get('/tweets', function (req, res, body) {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> express-basics: parameterized routes to enable handle-specific tweet requests
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
       res.json(tweets);
     }
   });
+<<<<<<< HEAD
 
 =======
   body = "hello skywalker";
@@ -66,6 +78,8 @@ app.get('/tweets', function (req, res, body) {
         res.json(tweets);
       }
     });
+=======
+>>>>>>> express-basics: parameterized routes to enable handle-specific tweet requests
 
 >>>>>>> adding-tweet-json: moved tweet getting into app.js for now to test
 });

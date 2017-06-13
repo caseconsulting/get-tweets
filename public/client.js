@@ -11,6 +11,7 @@ $( "#tweets" ).click(function() {
   //outgoing request for tweets
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   var input = document.getElementById("input").value;
 
@@ -66,3 +67,17 @@ $( "#tweets" ).click(function() {
 
 });
 >>>>>>> express-basics: added basic express functionality
+=======
+
+  var input = document.getElementById("input").value;
+
+  console.log(input);
+
+  $.get('/tweets', {handle: input + ''}, function(req, res, body){
+      for (let key in req)
+      {
+        $('#tweetCallback').append('<p>' + req[key].text + '<p>');
+      }
+    });
+  });
+>>>>>>> express-basics: parameterized routes to enable handle-specific tweet requests
