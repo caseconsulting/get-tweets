@@ -9,8 +9,11 @@ function helloWorld()
 //tweet button click
 $( "#tweets" ).click(function() {
   //outgoing request for tweets
+
   var input = document.getElementById("input").value;
+
   console.log(input);
+<<<<<<< HEAD
   body = input;
   $.get('/tweets', function(req,res, body){
     //write to the doc
@@ -24,6 +27,13 @@ $( "#tweets" ).click(function() {
     }
 
 >>>>>>> express-basics: added json output to page through client-side jquery
-  });
+=======
 
-});
+  $.get('/tweets', {handle: input + ''}, function(req, res, body){
+      for (let key in req)
+      {
+        $('#tweetCallback').append('<p>' + req[key].text + '<p>');
+      }
+    });
+>>>>>>> express-basics: parameterized routes to enable handle-specific tweet requests
+  });
