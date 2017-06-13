@@ -9,6 +9,7 @@ function helloWorld()
 //tweet button click
 $( "#tweets" ).click(function() {
   //outgoing request for tweets
+<<<<<<< HEAD
 
   var input = document.getElementById("input").value;
 
@@ -42,3 +43,11 @@ $( "#tweets" ).click(function() {
     });
 >>>>>>> express-basics: parameterized routes to enable handle-specific tweet requests
   });
+=======
+  $.get('/tweets', function(req,res, body){
+    //write to the doc
+  document.write(body);
+  });
+
+});
+>>>>>>> express-basics: added basic express functionality

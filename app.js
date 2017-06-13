@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
+<<<<<<< HEAD
 const tweet = require('./lib/tweets');
+=======
+>>>>>>> express-basics: added basic express functionality
 
 //serves everything in the public folder. ie. index.html and client.js
 app.use(express.static('public'));
@@ -8,6 +11,7 @@ app.use(express.static('public'));
 //route for tweets called by tweets function
 app.get('/tweets', function (req, res, body) {
   //send json file
+<<<<<<< HEAD
   'use strict';
   let username = req.query.handle;
   var Twitter = require('twitter');
@@ -37,6 +41,10 @@ app.get('/tweets', function (req, res, body) {
     }
   });
 
+=======
+  body = "hello skywalker";
+  res.send(body);
+>>>>>>> express-basics: added basic express functionality
 });
 
 //initialize the server on port 3000
