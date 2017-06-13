@@ -33,6 +33,7 @@ app.get('/tweets', function (req, res, body) {
   };
 =======
   'use strict';
+  
 
   var Twitter = require('twitter');
   require('dotenv').config();

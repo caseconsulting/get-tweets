@@ -10,6 +10,7 @@ function helloWorld()
 $( "#tweets" ).click(function() {
   //outgoing request for tweets
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   var input = document.getElementById("input").value;
 
@@ -44,9 +45,15 @@ $( "#tweets" ).click(function() {
 >>>>>>> express-basics: parameterized routes to enable handle-specific tweet requests
   });
 =======
+=======
+  var input = document.getElementById("input").value;
+  console.log(input);
+  body = input;
+>>>>>>> adding-tweet-json: got text input as variable
   $.get('/tweets', function(req,res, body){
     //write to the doc
-    document.write(req);
+
+    //document.write(req);
   });
 
 });
