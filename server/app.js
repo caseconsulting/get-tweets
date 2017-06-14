@@ -1,18 +1,20 @@
 var express = require('express');
 var app = express();
 var twitter = require('./twitterapi');
-var middleware = require('./twittermiddleware');
+
+var twittermiddleware = require('./twittermiddleware');
 //serves everything in the public folder. ie. index.html and client.js
 app.use(express.static('public'));
 
-//route for tweets
-app.get('/tweets', middleware.tweets);
+//route for tweets called by tweets function
+app.get('/tweets', twittermiddleware.twitterFunction.tweets);
 
 //route for friends
-app.get('/friends', middleware.friends);
+app.get('/friends', twittermiddleware.twitterFunction.friends);
 
 //route for followers
-app.get('/followers', middleware.followers);
+app.get('/followers', twittermiddleware.twitterFunction.followers);
+
 
 //initialize the server on port 3000
 app.listen(3000, function()

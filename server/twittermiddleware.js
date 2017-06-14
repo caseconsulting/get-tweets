@@ -20,7 +20,7 @@ function friends(req, res, body){
   username = username.replace('@','');
   }
   console.log("Username recived: "+username);
-  twitter.getfriends(username,res);
+  twitter.getFriends(username,res);
 }
 
 function followers(req,res,body){
@@ -35,5 +35,5 @@ function followers(req,res,body){
 
 let twitterFunction = {
   tweets, friends, followers
-}
+};
 module.exports = twitterFunction;
