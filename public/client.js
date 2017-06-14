@@ -1,17 +1,28 @@
 function draw(toClick,req){
 
+
     var x = req.map(function(data){
+
     if(toClick){
+
       return '<h6 onClick="'+toClick+'(this);">'+data+'</h6>';
     }
     else {
+
+
       return '<h6>'+data+'</h6>';
     }
     }).join("");
+    if (req.length == 0)
+    {
+      alert("this person has no tweets");
+    }
+
       $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
   }
 function loadHandle(e){
   document.getElementById("input").value = e.innerHTML;
+  inputCheck(e.innerHTML, "tweets");
 }
 
 function inputCheck(input,action,toClick){
