@@ -5,15 +5,23 @@ function draw(req){
       $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
   }
 
+function inputCheck(input,action){
+  if(input.length>0){
+    $.get('/'+action+'/' + input, draw);
+  }
+  else{
+    draw(["Enter a handle"]);
+  }
+}
 //tweet button click
 $( "#tweets" ).click(function() {
   //outgoing request for tweets
 
   var input = document.getElementById("input").value;
 
-  console.log("Username sent: "+input);
+    console.log("Username sent: "+input);
+    inputCheck(input,"tweets");
 
-  $.get('/tweets/' + input, draw);
   });
 
 
@@ -25,7 +33,7 @@ $( "#tweets" ).click(function() {
 
     console.log("Username sent: "+input);
 
-    $.get('/friends/' + input, draw);
+      inputCheck(input,"friends");
     });
 
     //tweet button click
@@ -36,5 +44,5 @@ $( "#tweets" ).click(function() {
 
       console.log("Username sent: "+input);
 
-      $.get('/followers/' + input, draw);
+        inputCheck(input,"followers");
       });
