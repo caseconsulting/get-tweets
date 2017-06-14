@@ -24,7 +24,7 @@ $( "#tweets" ).click(function() {
 
     console.log("Username sent: "+input);
 
-    $.get('/tweets', {handle: input + ''}, function(req, res, body){
+    $.get('/friends', {handle: input + ''}, function(req, res, body){
         for (let key in req)
         {
           $('#twitterOutput').append('<h6>' + req[key].text + '<h6>');
@@ -41,7 +41,7 @@ $( "#tweets" ).click(function() {
 
       console.log("Username sent: "+input);
 
-      $.get('/tweets', {handle: input + ''}, function(req, res, body){
+      $.get('/followers', {handle: input + ''}, function(req, res, body){
           for (let key in req)
           {
             $('#twitterOutput').append('<h6>' + req[key].text + '<h6>');
