@@ -1,18 +1,24 @@
-function draw(req){
+function draw(toClick,req){
+
     var x = req.map(function(data){
-      return '<h6 onClick="loadHandle(this);">'+data+'</h6>';
+    if(toClick){
+      return '<h6 onClick="'+toClick+'(this);">'+data+'</h6>';
+    }
+    else {
+      return '<h6>'+data+'</h6>';
+    }
     }).join("");
       $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
   }
 function loadHandle(e){
-  
   document.getElementById("input").value = e.innerHTML;
 }
-function inputCheck(input,action){
+
+function inputCheck(input,action,toClick){
   input = input.replace('@','');
 
   if(input.length>0){
-    $.get('/'+action+'/' + input, draw);
+    $.get('/'+action+'/' + input, draw.bind(null,toClick));
   }
   else{
     draw(["Enter a handle"]);
@@ -39,7 +45,7 @@ $( "#tweets" ).click(function() {
 
     console.log("Username sent: "+input);
 
-      inputCheck(input,"friends");
+      inputCheck(input,"friends",'loadHandle');
     });
 
     //tweet button click
@@ -50,5 +56,5 @@ $( "#tweets" ).click(function() {
 
       console.log("Username sent: "+input);
 
-        inputCheck(input,"followers");
+        inputCheck(input,"followers", 'loadHandle');
       });
