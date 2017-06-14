@@ -1,3 +1,10 @@
+function draw(req){
+    var x = req.map(function(data){
+      return "<h6>"+data+"</h6>";
+    }).join("");
+      $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
+  }
+
 //tweet button click
 $( "#tweets" ).click(function() {
   //outgoing request for tweets
@@ -6,12 +13,7 @@ $( "#tweets" ).click(function() {
 
   console.log("Username sent: "+input);
 
-  $.get('/tweets/' + input, function(req, res, body){
-      var x = req.map(function(tweet){
-        return "<h6>"+tweet+"</h6>";
-      }).join("");
-        $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
-    });
+  $.get('/tweets/' + input, draw);
   });
 
 
@@ -23,13 +25,7 @@ $( "#tweets" ).click(function() {
 
     console.log("Username sent: "+input);
 
-    $.get('/friends/' + input, function(req, res, body){
-      var x = req.map(function(friend){
-        return "<h6>"+friend+"</h6>";
-      }).join("");
-        $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
-
-      });
+    $.get('/friends/' + input, draw);
     });
 
     //tweet button click
@@ -40,11 +36,5 @@ $( "#tweets" ).click(function() {
 
       console.log("Username sent: "+input);
 
-      $.get('/followers/' + input, function(req, res, body){
-        var x = req.map(function(follower){
-          return "<h6>"+follower+"</h6>";
-        }).join("");
-          $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
-
-        });
+      $.get('/followers/' + input, draw);
       });
