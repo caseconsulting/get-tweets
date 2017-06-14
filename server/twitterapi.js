@@ -26,7 +26,7 @@ function getTweets(name, res){
 function getFriends(name, res){
   var params = {sreen_name: name};
 
-    return client.get('friends/ids', params, function(error, friends, response) {
+    return client.get('friends/list', params, function(error, friends, response) {
         if (!error) {
           let cleanFriends = friends.users.map(friend=>friend.screen_name)
           res.json(cleanFriends);
