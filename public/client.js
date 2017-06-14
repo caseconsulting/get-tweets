@@ -7,16 +7,15 @@ $( "#tweets" ).click(function() {
   console.log("Username sent: "+input);
 
   $.get('/tweets/' + input, function(req, res, body){
-      for (let key in req)
-      {
-        $('#twitterOutput').append('<h6>' + req[key].text + '<h6>');
-
-      }
+      var x = req.map(function(tweet){
+        return "<h6>"+tweet.text+"</h6>";
+      }).join("");
+        $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
     });
   });
 
 
-  //tweet button click
+  //friends button click
   $( "#friends" ).click(function() {
     //outgoing request for tweets
 
@@ -25,11 +24,11 @@ $( "#tweets" ).click(function() {
     console.log("Username sent: "+input);
 
     $.get('/friends/' + input, function(req, res, body){
-        for (let key in req)
-        {
-          $('#twitterOutput').append('<h6>' + req[key] + '<h6>');
+      var x = req.map(function(tweet){
+        return "<h6>"+tweet+"</h6>";
+      }).join("");
+        $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
 
-        }
       });
     });
 
@@ -42,10 +41,10 @@ $( "#tweets" ).click(function() {
       console.log("Username sent: "+input);
 
       $.get('/followers/' + input, function(req, res, body){
-          for (let key in req)
-          {
-            $('#twitterOutput').append('<h6>' + req[key] + '<h6>');
+        var x = req.map(function(tweet){
+          return "<h6>"+tweet+"</h6>";
+        }).join("");
+          $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
 
-          }
         });
       });
