@@ -6,6 +6,8 @@ function draw(req){
   }
 
 function inputCheck(input,action){
+  input = input.replace('@','');
+  
   if(input.length>0){
     $.get('/'+action+'/' + input, draw);
   }
@@ -13,6 +15,7 @@ function inputCheck(input,action){
     draw(["Enter a handle"]);
   }
 }
+
 //tweet button click
 $( "#tweets" ).click(function() {
   //outgoing request for tweets
