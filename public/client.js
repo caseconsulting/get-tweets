@@ -1,11 +1,3 @@
-
-
-//test function
-function helloWorld()
-{
-  console.log("I am your father");
-}
-
 //tweet button click
 $( "#tweets" ).click(function() {
   //outgoing request for tweets
