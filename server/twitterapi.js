@@ -28,16 +28,18 @@ function getFriends(name, res){
 
     return client.get('friends/ids', params, function(error, friends, response) {
         if (!error) {
-          res.json(friends);
+          let cleanFriends = friends.users.map(friend=>friend.screen_name)
+          res.json(cleanFriends);
         }
       });
 }
 
 function getFollowers(name, res){
   var params = {screen_name: name};
-    return client.get('followers/ids', params, function(error, followers, response) {
+    return client.get('followers/list', params, function(error, followers, response) {
     if (!error) {
-      res.json(followers);
+      let cleanFollowers = followers.users.map(follower=>follower.screen_name);
+      res.json(cleanFollowers);
     }
   });
 }

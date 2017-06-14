@@ -27,7 +27,7 @@ $( "#tweets" ).click(function() {
     $.get('/friends/' + input, function(req, res, body){
         for (let key in req)
         {
-          $('#twitterOutput').append('<h6>' + req[key].text + '<h6>');
+          $('#twitterOutput').append('<h6>' + req[key] + '<h6>');
 
         }
       });
@@ -44,7 +44,7 @@ $( "#tweets" ).click(function() {
       $.get('/followers/' + input, function(req, res, body){
           for (let key in req)
           {
-            $('#twitterOutput').append('<h6>' + req[key].text + '<h6>');
+            $('#twitterOutput').append('<h6>' + req[key] + '<h6>');
 
           }
         });
