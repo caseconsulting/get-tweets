@@ -1,13 +1,16 @@
 function draw(req){
     var x = req.map(function(data){
-      return "<h6>"+data+"</h6>";
+      return '<h6 onClick="loadHandle(this);">'+data+'</h6>';
     }).join("");
       $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
   }
-
+function loadHandle(e){
+  
+  document.getElementById("input").value = e.innerHTML;
+}
 function inputCheck(input,action){
   input = input.replace('@','');
-  
+
   if(input.length>0){
     $.get('/'+action+'/' + input, draw);
   }
