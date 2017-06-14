@@ -18,10 +18,13 @@ function inputCheck(input,action,toClick){
   input = input.replace('@','');
 
   if(input.length>0){
-    $.get('/'+action+'/' + input, draw.bind(null,toClick));
+    $.get('/'+action+'/' + input, draw.bind(null,toClick))
+      .fail(function(){
+        draw(toClick, ["Failed to connect to server :(( "]);
+      })
   }
   else{
-    draw(["Enter a handle"]);
+    draw(toClick,["Enter a handle"]);
   }
 }
 
