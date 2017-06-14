@@ -3,7 +3,7 @@ var twitter = require('./twitterapi');
 function tweets(req, res, body) {
   //send json file
   'use strict';
-  let username = req.query.handle;
+  let username = req.params.handle;
 
   if(username[0]=='@'){
   username = username.replace('@','');
@@ -14,7 +14,7 @@ function tweets(req, res, body) {
 }
 
 function friends(req, res, body){
-  let username = req.query.handle;
+  let username = req.params.handle;
 
   if(username[0]=='@'){
   username = username.replace('@','');
@@ -24,7 +24,7 @@ function friends(req, res, body){
 }
 
 function followers(req,res,body){
-  let username = req.query.handle;
+  let username = req.params.handle;
 
   if(username[0]=='@'){
   username = username.replace('@','');
