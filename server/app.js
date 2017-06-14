@@ -7,13 +7,13 @@ var twittermiddleware = require('./twittermiddleware');
 app.use(express.static('public'));
 
 //route for tweets called by tweets function
-app.get('/tweets', twittermiddleware.twitterFunction.tweets);
+app.get('/tweets', twittermiddleware.tweets);
 
 //route for friends
-app.get('/friends', twittermiddleware.twitterFunction.friends);
+app.get('/friends', twittermiddleware.friends);
 
 //route for followers
-app.get('/followers', twittermiddleware.twitterFunction.followers);
+app.get('/followers', twittermiddleware.followers);
 
 
 //initialize the server on port 3000

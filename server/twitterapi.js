@@ -34,11 +34,16 @@ function getFriends(name, res){
 }
 
 function getFollowers(name, res){
-
+  var params = {screen_name: name};
+    program.client.get('followers/ids', params, function(error, followers, response) {
+    if (!error) {
+      res.json(followers);
+    }
+  });
 }
 
 let svc = {
-  getTweets
+  getTweets, getFriends, getFollowers
 };
 
 module.exports = svc;
