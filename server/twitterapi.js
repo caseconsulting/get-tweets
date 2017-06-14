@@ -18,7 +18,8 @@ function getTweets(name, res){
   };
   return client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
-      res.json(tweets);
+      let cleanTweets = tweets.map(tweet => tweet.text);
+      res.json(cleanTweets);
     }
   });
 }

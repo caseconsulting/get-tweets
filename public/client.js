@@ -8,7 +8,7 @@ $( "#tweets" ).click(function() {
 
   $.get('/tweets/' + input, function(req, res, body){
       var x = req.map(function(tweet){
-        return "<h6>"+tweet.text+"</h6>";
+        return "<h6>"+tweet+"</h6>";
       }).join("");
         $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
     });
@@ -24,8 +24,8 @@ $( "#tweets" ).click(function() {
     console.log("Username sent: "+input);
 
     $.get('/friends/' + input, function(req, res, body){
-      var x = req.map(function(tweet){
-        return "<h6>"+tweet+"</h6>";
+      var x = req.map(function(friend){
+        return "<h6>"+friend+"</h6>";
       }).join("");
         $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
 
@@ -41,8 +41,8 @@ $( "#tweets" ).click(function() {
       console.log("Username sent: "+input);
 
       $.get('/followers/' + input, function(req, res, body){
-        var x = req.map(function(tweet){
-          return "<h6>"+tweet+"</h6>";
+        var x = req.map(function(follower){
+          return "<h6>"+follower+"</h6>";
         }).join("");
           $('#twitterOutput').replaceWith('<div id="twitterOutput">'+x+'</div>');
 
