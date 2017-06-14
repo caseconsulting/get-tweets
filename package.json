@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "CLI to retrieve tweets",
   "scripts": {
-    "gt": "bin/gt"
+    "gt": "bin/gt",
+    "start": "node server/app.js"
   },
   "author": "tech@consultwithcase.com",
   "license": "MIT",
