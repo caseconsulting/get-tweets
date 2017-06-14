@@ -24,10 +24,6 @@ function getTweets(name, res){
 }
 
 function getFriends(name, res){
-
-}
-
-function getFollowers(name, res){
   var params = {sreen_name: name};
 
       client.get('friends/ids', params, function(error, friends, response) {
@@ -35,6 +31,10 @@ function getFollowers(name, res){
           res.json(friends);
         }
       });
+}
+
+function getFollowers(name, res){
+
 }
 
 let svc = {
