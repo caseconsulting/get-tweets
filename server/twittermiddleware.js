@@ -24,4 +24,5 @@ function followers(req,res,body){
 let twitterFunction = {
   tweets, friends, followers
 };
+
 module.exports = twitterFunction;

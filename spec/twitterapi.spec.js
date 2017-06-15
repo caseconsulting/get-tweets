@@ -1,7 +1,7 @@
 const twitterapi = require('../server/twitterapi');
 const client = require('twitter');
 
-describe("twitterapi", function() {
+xdescribe("twitterapi", function() {
   describe('getTweets', function(){
     let name, res, params;
 
