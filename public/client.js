@@ -31,7 +31,12 @@ function inputCheck(input,action,toClick){
   if(input.length>0){
     $.get('/'+action+'/' + input, draw.bind(null,toClick))
       .fail(function(){
-        draw(toClick, ["Failed to connect to server :(( "]);
+        let img = "http://images.clipshrine.com/getimg/PngMedium-Sad-PANDA-89849.png"
+        //TODO
+        //switch to change URL based on random number
+        img = "<img src=" +img+"></img>";
+        img = img + "<figcaption> ET failed to phone home. RIP Harambe. <3 </figcaption>"
+        draw(toClick, [img]);
       })
   }
   else{
