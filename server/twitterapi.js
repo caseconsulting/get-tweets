@@ -29,7 +29,7 @@ function getFriends(name, res){
 
     return client.get('friends/list', params, function(error, friends, response) {
         if (!error) {
-          let cleanFriends = friends.users.map(friend=>friend.screen_name)
+          let cleanFriends = friends.users.map(friend=>friend.screen_name);
           res.json(cleanFriends);
         }
       });
