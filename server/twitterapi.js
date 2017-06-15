@@ -25,7 +25,7 @@ function getTweets(name, res){
 }
 
 function getFriends(name, res){
-  var params = {sreen_name: name};
+  var params = {screen_name: name};
 
     return client.get('friends/list', params, function(error, friends, response) {
         if (!error) {
