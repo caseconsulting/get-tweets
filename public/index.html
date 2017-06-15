@@ -15,28 +15,28 @@
   <div class="container-fluid">
     <h1 id="fancy-heading" class="text-center">Get Tweets</h1>
   </div>
-  <div class="container text-center">
-    <div>
-      <button id="friends">Following</button>
-      <button id="followers">Followers</button>
-      <button id="tweets">Tweets</button>
+  <div class="container">
+    <!-- text input -->
+    <div class="input-group col-sm-6">
+      <span class="input-group-addon" id="basic-addon1">@</span>
+      <input id="input" type="text" name="twitter handle" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+    </div>
+    <!-- buttons -->
+    <div class="btn-group col-sm-6" role="group">
+      <button type="button" class="btn btn-default" id="friends">Following</button>
+      <button type="button" class="btn btn-default" id="followers">Followers</button>
+      <button type="button" class="btn btn-default" id="tweets">Tweets</button>
     </div>
 
-    <div>
-      <form>
-
-        <input id="input" type="text" name="twitter handle" placeholder="twitter handle"/>
-
-      </form>
-    </div>
-
-    <div class="output">
-      <div id="twitterOutput">
-      </div>
-    </div>
-    <ul class="tweets friends followers"></ul>
   </div>
-  <script src="jquery.min.js"></script>
-  <script src="client.js"></script>
+
+  <div class="output-style">
+    <div id="twitterOutput">
+    </div>
+  </div>
+
+</div>
+<script src="jquery.min.js"></script>
+<script src="client.js"></script>
 </body>
 </html>
