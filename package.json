@@ -4,7 +4,8 @@
   "description": "CLI to retrieve tweets",
   "scripts": {
     "gt": "bin/gt",
-    "start": "node server/app.js"
+    "start": "node server/app.js",
+    "test": "jasmine"
   },
   "author": "tech@consultwithcase.com",
   "license": "MIT",
@@ -23,6 +24,7 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-task-list": "^0.0.2",
     "gulp-task-listing": "^1.0.1",
+    "jasmine": "^2.6.0",
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "terminus": "^1.1.0"
