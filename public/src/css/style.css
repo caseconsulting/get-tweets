@@ -13,10 +13,8 @@
 }
 html,body
 {
-height:100%;
+  height:100%;
 }
-
-
 
 /*header title font*/
 #fancy-heading {
@@ -28,11 +26,12 @@ height:100%;
 }
 
 #twitterOutput {
-    padding-top: 280px;
-    z-index: 1;
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-size: 18px;
+  padding-top: 280px;
+  z-index: 1;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  min-height: 100%;
 }
 
 .clickable:hover {
@@ -49,13 +48,21 @@ height:100%;
   margin-right: 5px;
 }
 .button-icon-at{
-  color:#1DA1F2
+  color:#1DA1F2;
 }
 
 /*footer section*/
 
 .footer{
   background-color: #cfcfcf;
-  height: 25px;
-
+  height: 10%;
+  position: absolute;
+  width: 100%;
+}
+.footer-content{
+  margin-top: 3%;
+}
+li .footer-icons{
+  font-size: 30px;
+  padding-left: 10px;
 }
