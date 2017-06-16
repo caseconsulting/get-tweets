@@ -27,6 +27,11 @@ function loadHandle(e){
   inputCheck(e.innerHTML, "tweets");
 }
 
+function fetchTweets(){
+  var input = document.getElementById("input").value;
+  console.log("Username sent: "+input);
+  inputCheck(input,"tweets");
+}
 //Checking to make sure server is available and correct input was passed
 function inputCheck(input, action, toClick){
   input = input.replace('@','');
@@ -51,11 +56,12 @@ function inputCheck(input, action, toClick){
 
 //tweet button click
 $( "#tweets" ).click(function() {
-
-  var input = document.getElementById("input").value;
-  console.log("Username sent: "+input);
-  inputCheck(input,"tweets");
-
+  fetchTweets();
+});
+$("#input").keypress(function(e) {
+  if(e.which == 13) {
+    fetchTweets();
+  }
 });
 
 $( "#friends" ).click(function() {
@@ -63,6 +69,7 @@ $( "#friends" ).click(function() {
   var input = document.getElementById("input").value;
   console.log("Username sent: "+input);
   inputCheck(input,"friends",'loadHandle');
+
 });
 
 $( "#followers" ).click(function() {
