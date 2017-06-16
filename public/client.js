@@ -1,3 +1,7 @@
+//Passes in toClick and request from Twitter
+//if toClick exists, as in the case of friends and followers
+//add the onclick functionality to the HTML tag along with twitter data
+//otherwise just draw the data and do not give it onClick functionality
 function draw(toClick,req){
 
   var x = req.map(function(data){
@@ -23,6 +27,7 @@ function loadHandle(e){
   inputCheck(e.innerHTML, "tweets");
 }
 
+//Checking to make sure server is available and correct input was passed
 function inputCheck(input, action, toClick){
   input = input.replace('@','');
 
@@ -35,7 +40,7 @@ function inputCheck(input, action, toClick){
       //create switch to change URL based on random number
       img = '<img class="animated rubberBand" src=' +img+'></img>';
       img = img + "<figcaption> ET failed to phone home. RIP Harambe. <3 </figcaption>"
-
+      toClick = null;
       draw(toClick, [img]);
     })
   }
