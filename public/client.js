@@ -78,3 +78,14 @@ $( "#followers" ).click(function() {
   console.log("Username sent: "+input);
   inputCheck(input,"followers", 'loadHandle');
 });
+
+//scroll shadow effect
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll > 0) {
+        $("#banner").addClass("active");
+    }
+    else {
+        $("#banner").removeClass("active");
+    }
+});
