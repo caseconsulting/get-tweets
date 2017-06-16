@@ -72,3 +72,10 @@ li .footer-icons{
 {
     background-color: #fff;
 }
+
+
+.foo-bar{
+
+  z-index: 10 !important;
+  background-image: url("../img/notes.gif");
+}

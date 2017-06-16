@@ -98,3 +98,10 @@ $(window).scroll(function() {
     $("#banner").removeClass("active");
   }
 });
+
+
+$("#vine").click(function(){
+  $("#twitterOutput").addClass("foo-bar");
+    setTimeout(function(){$("#twitterOutput").removeClass("foo-bar");},5000);
+
+});
