@@ -1,3 +1,4 @@
+
 #banner {
   width: 100vw;
   position: fixed;
@@ -10,6 +11,12 @@
 .active {
   box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
 }
+html,body
+{
+height:100%;
+}
+
+
 
 /*header title font*/
 #fancy-heading {
@@ -31,5 +38,24 @@
 .clickable:hover {
   cursor: pointer;
   background-color: #E8E8E8;
+
+}
+
+/*icons for input sections*/
+.button-icons{
+  width: 20px;
+  height: 20px;
+  color:#1DA1F2;
+  margin-right: 5px;
+}
+.button-icon-at{
+  color:#1DA1F2
+}
+
+/*footer section*/
+
+.footer{
+  background-color: #cfcfcf;
+  height: 25px;
 
 }
