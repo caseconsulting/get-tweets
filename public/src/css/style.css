@@ -32,6 +32,7 @@ html,body
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   min-height: 100%;
+  overflow: auto;
 }
 
 .clickable:hover {
@@ -58,6 +59,7 @@ html,body
   height: 10%;
   position: absolute;
   width: 100%;
+  margin-top: 1%
 }
 .footer-content{
   margin-top: 3%;
