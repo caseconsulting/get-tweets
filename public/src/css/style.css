@@ -41,6 +41,7 @@ html,body
 
 }
 
+
 /*icons for input sections*/
 .button-icons{
   width: 20px;
@@ -67,4 +68,7 @@ html,body
 li .footer-icons{
   font-size: 30px;
   padding-left: 10px;
+.connectRefused
+{
+    background-color: #fff;
 }

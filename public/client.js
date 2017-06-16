@@ -4,13 +4,22 @@
 //otherwise just draw the data and do not give it onClick functionality
 function draw(toClick,req){
 
+  //maps through for all elements of the array
   var x = req.map(function(data){
     if (toClick){
       return '<h6 class = "well well-lg col-sm-6 col-sm-offset-3 clickable animated bounceInDown" onClick="'+toClick+'(this);">'+data+'</h6>';
     }
     else {
-      return '<h6 class = "well well-lg col-sm-6 col-sm-offset-3 animated bounceInDown">'+data+'</h6>';
-    }
+      //checks to see if the data element of the array req is the string "error"
+      if (data === "error"){
+          req.shift();
+          return req[0];
+
+      }
+      else {
+          return '<h6 class = "well well-lg col-sm-6 col-sm-offset-3 animated bounceInDown">'+data+'</h6>';
+        }
+      }
   }).join("");
 
   //if the length of the response from twitter is 0
@@ -43,10 +52,10 @@ function inputCheck(input, action, toClick){
       let img = "http://images.clipshrine.com/getimg/PngMedium-Sad-PANDA-89849.png"
       //TODO
       //create switch to change URL based on random number
-      img = '<img class="animated rubberBand" src=' +img+'></img>';
+      img = '<img class="connectRefused animated rubberBand" src=' +img+'></img>';
       img = img + "<figcaption> ET failed to phone home. RIP Harambe. <3 </figcaption>"
       toClick = null;
-      draw(toClick, [img]);
+      draw(toClick, ["error", img]);
     })
   }
   else{
@@ -81,11 +90,11 @@ $( "#followers" ).click(function() {
 
 //scroll shadow effect
 $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-    if (scroll > 0) {
-        $("#banner").addClass("active");
-    }
-    else {
-        $("#banner").removeClass("active");
-    }
+  var scroll = $(window).scrollTop();
+  if (scroll > 0) {
+    $("#banner").addClass("active");
+  }
+  else {
+    $("#banner").removeClass("active");
+  }
 });
