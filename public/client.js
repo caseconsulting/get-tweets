@@ -6,10 +6,10 @@ function draw(toClick,req){
 
   var x = req.map(function(data){
     if (toClick){
-      return '<h6 onClick="'+toClick+'(this);">'+data+'</h6>';
+      return '<h6 class = "well well-lg col-sm-6 col-sm-offset-3" onClick="'+toClick+'(this);">'+data+'</h6>';
     }
     else {
-      return '<h6>'+data+'</h6>';
+      return '<h6 class = "well well-lg col-sm-6 col-sm-offset-3">'+data+'</h6>';
     }
   }).join("");
 
