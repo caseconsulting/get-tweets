@@ -1,7 +1,7 @@
 const twitterapi = require('../server/twitterapi');
 const client = require('twitter');
 
-xdescribe("twitterapi", function() {
+fdescribe("twitterapi", function() {
   describe('getTweets', function(){
     let name, res, params;
 
@@ -17,10 +17,12 @@ xdescribe("twitterapi", function() {
       spyOn(client, 'get').and.returnValue('clientResponse');
       spyOn(twitterapi, '_timelineCB').and.returnValue('timelineResponse');
     });
+
     afterEach(function(){
       expect(client.get).toHaveBeenCalledWith('statuses/user_timeline', params, 'timelineResponse');
       expect(twitterapi._timelineCB(err, tweets, response));
     });
+
     it('Should return', function(){
       expect(twitterapi.getTweets(name, res)).toEqual('clientResponse');
     });
