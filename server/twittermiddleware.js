@@ -21,6 +21,12 @@ function followers(req,res,body){
   twitter.getFollowers(username,res);
 }
 
+function favorites(req,res,body){
+  let username = req.params.handle;
+  console.log("Username recieved: "+ username);
+  twitter.getFavorites(username,res);
+}
+
 let twitterFunction = {
   tweets, friends, followers
 };

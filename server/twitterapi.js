@@ -25,7 +25,9 @@ function getTweets(name, res){
 }
 
 function getFriends(name, res){
-  var params = {screen_name: name};
+  var params = {
+    screen_name: name
+    };
 
     return client.get('friends/list', params, function(error, friends, response) {
         if (!error) {
@@ -36,11 +38,25 @@ function getFriends(name, res){
 }
 
 function getFollowers(name, res){
-  var params = {screen_name: name};
+  var params = {
+    screen_name: name
+    };
     return client.get('followers/list', params, function(error, followers, response) {
     if (!error) {
       let cleanFollowers = followers.users.map(follower=>follower.screen_name);
       res.json(cleanFollowers);
+    }
+  });
+}
+
+function getTweets(name, res){
+  var params = {
+    screen_name: name
+    };
+  return client.get('favorites/list', params, function(error, tweets, response) {
+    if (!error) {
+      let cleanTweets = tweets.map(tweet => tweet.text);
+      res.json(cleanTweets);
     }
   });
 }

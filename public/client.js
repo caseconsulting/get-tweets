@@ -41,6 +41,7 @@ function fetchTweets(){
   console.log("Username sent: "+input);
   inputCheck(input,"tweets");
 }
+
 //Checking to make sure server is available and correct input was passed
 function inputCheck(input, action, toClick){
   input = input.replace('@','');
@@ -50,8 +51,7 @@ function inputCheck(input, action, toClick){
     .fail(function(){
 
       let img = "http://images.clipshrine.com/getimg/PngMedium-Sad-PANDA-89849.png"
-      //TODO
-      //create switch to change URL based on random number
+
       img = '<img class="connectRefused animated rubberBand" src=' +img+'></img>';
       img = img + "<figcaption> ET failed to phone home. RIP Harambe. <3 </figcaption>"
       toClick = null;
@@ -88,6 +88,13 @@ $( "#followers" ).click(function() {
   inputCheck(input,"followers", 'loadHandle');
 });
 
+$( "#favorites" ).click(function() {
+
+  var input = document.getElementById("input").value;
+  console.log("Username sent: "+input);
+  inputCheck(input,"favorites", 'loadHandle');
+});
+
 //scroll shadow effect
 $(window).scroll(function() {
   var scroll = $(window).scrollTop();
@@ -99,7 +106,7 @@ $(window).scroll(function() {
   }
 });
 
-
+//Strangely suspicious code...
 $("#vine").click(function(){
   $("#twitterOutput").addClass("foo-bar");
     setTimeout(function(){$("#twitterOutput").removeClass("foo-bar");},5000);
