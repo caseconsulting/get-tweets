@@ -97,10 +97,10 @@ $( "#favorites" ).click(function() {
 $(window).scroll(function() {
   var scroll = $(window).scrollTop();
   if (scroll > 0) {
-    $("#banner").addClass("active");
+    $("nav").addClass("active");
   }
   else {
-    $("#banner").removeClass("active");
+    $("nav").removeClass("active");
   }
 });
 
