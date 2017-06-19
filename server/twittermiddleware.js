@@ -28,7 +28,7 @@ function favorites(req,res,body){
 }
 
 let twitterFunction = {
-  tweets, friends, followers
+  tweets, friends, followers, favorites
 };
 
 module.exports = twitterFunction;

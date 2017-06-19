@@ -49,7 +49,7 @@ function getFollowers(name, res){
   });
 }
 
-function getTweets(name, res){
+function getFavorites(name, res){
   var params = {
     screen_name: name
     };
@@ -61,8 +61,20 @@ function getTweets(name, res){
   });
 }
 
+function getStatus(name, res){
+  // var params = {
+  //   screen_name: name
+  //   };
+  return client.get('application/rate_limit_status', function(error, tweets, response) {
+    if (!error) {
+      let cleanTweets = tweets.map(tweet => tweet.text);
+      res.json(cleanTweets);
+    }
+  });
+}
+
 let svc = {
-  getTweets, getFriends, getFollowers
+  getTweets, getFriends, getFollowers, getFavorites, getStatus
 };
 
 module.exports = svc;

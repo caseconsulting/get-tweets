@@ -36,10 +36,10 @@ function loadHandle(e){
   inputCheck(e.innerHTML, "tweets");
 }
 
-function fetchTweets(){
+function fetchTweets(action){
   var input = document.getElementById("input").value;
   console.log("Username sent: "+input);
-  inputCheck(input,"tweets");
+  inputCheck(input,action);
 }
 
 //Checking to make sure server is available and correct input was passed
@@ -65,11 +65,11 @@ function inputCheck(input, action, toClick){
 
 //tweet button click
 $( "#tweets" ).click(function() {
-  fetchTweets();
+  fetchTweets('tweets');
 });
 $("#input").keypress(function(e) {
   if(e.which == 13) {
-    fetchTweets();
+    fetchTweets('tweets');
   }
 });
 
@@ -90,9 +90,7 @@ $( "#followers" ).click(function() {
 
 $( "#favorites" ).click(function() {
 
-  var input = document.getElementById("input").value;
-  console.log("Username sent: "+input);
-  inputCheck(input,"favorites", 'loadHandle');
+  fetchTweets('favorites');
 });
 
 //scroll shadow effect
