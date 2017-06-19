@@ -11,19 +11,58 @@
 .active {
   box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
 }
+
+nav.navbar{
+  background-color:white;
+   // Animation
+   -webkit-transition: all 0.4s ease;
+   transition: all 0.4s ease;
+}
+
+nav.navbar.shrink {
+  min-height: 35px;
+  font-size: 60px;
+  transition: all 0.4s ease;
+}
+nav.navbar.shrink.remove-title h1{
+  /*min-height: 35px;
+  font-size: 0px;
+  padding-bottom: 10px;*/
+  visibility: hidden;
+}
+
+.input-group{
+  padding-bottom: 10px;
+}
 html,body
 {
   height:100%;
 }
 
 /*header title font*/
-#fancy-heading {
+.fancy-heading h1 {
   font-family: 'Lily Script One', cursive;
   font-size: 120px;
   padding-top: 20px;
   margin-bottom: 40px;
-  color:#1DA1F2
+  color:#1DA1F2;
+  transition: all 0.6s ease;
 }
+.shrink .fancy-heading h1 {
+  font-family: 'Lily Script One', cursive;
+  font-size: 60px;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  color:#1DA1F2;
+  transition: all 0.6s ease;
+}
+.remove-title .fancy-heading h1 {
+  font-family: 'Lily Script One', cursive;
+  font-size: 0px;
+  margin-bottom: 0px;
+  color:#1DA1F2;
+}
+
 
 #twitterOutput {
   padding-top: 280px;

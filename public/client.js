@@ -112,3 +112,22 @@ $("#vine").click(function(){
     setTimeout(function(){$("#twitterOutput").removeClass("foo-bar");},5000);
 
 });
+
+// header Animation
+
+$(window).scroll(function() {
+  console.log($(document).scrollTop());
+  let scroll =$(document).scrollTop();
+
+  if (scroll > 50&&scroll<300) {
+    $('nav').addClass('shrink');
+  }
+  else if(scroll>300){
+    //alert("over 300")
+    $('nav').addClass('remove-title');
+  }
+  else{
+    $('nav').removeClass('shrink');
+    $('nav').removeClass('remove-title');
+  }
+});
