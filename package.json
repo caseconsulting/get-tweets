@@ -18,6 +18,7 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
+    "cors": "^2.8.3",
     "gulp": "^3.9.1",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.4",
